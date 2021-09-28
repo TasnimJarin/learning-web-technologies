@@ -43,7 +43,7 @@
                             {
                                for($j=1;$j<=$i;$j++)
                                {
-                                 echo "*";
+                                 echo $j;
                                }
                             echo "<br/>";
                            }

@@ -12,7 +12,7 @@
 if(isset($_REQUEST['submit']))
 {
 	$name = $_REQUEST['myname'];
-	if($name == " "){
+	if($name == ""){
 		echo "null value...";
 	}else{
 		echo $name;

@@ -16,18 +16,26 @@
 		$name = $_REQUEST['myname'];
 		if($name=="")
         {
-		      echo "You_must_enter_your_name!";
+		      echo "Enter_your_name!";
 		}
         else
         {
 			 if(strlen($name)>=2)
              {
-                 
-                 echo $name;
+				$c = ord($name);
+					if ($c < 65 || $c > 122 ) 
+					{
+						echo "Only Letter";
+					}
+					else
+					{
+                        echo $name;
+					}
+				              
              }
              else
              {
-                 echo "you_must_enter_least_words!!";
+                 echo "Enter_least_two_words!!";
              }
 		}	
 	}

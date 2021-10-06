@@ -12,14 +12,12 @@ if(isset($_REQUEST['submit']))
         {
             if($passwor !="")
             {
-                if($name==$passwor )
-                {
+                $user=['username'=>'name','password'=>'password'];
+                $_SESSION['user']=$user;
+
                     header('location: Login.html');
-                }
-                else
-                {
-                    echo "Invalid...";
-                }
+                    
+                
             }
             else
             {

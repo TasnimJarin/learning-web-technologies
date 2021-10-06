@@ -9,14 +9,16 @@ if(isset($_REQUEST['submit']))
 	{
 		if($password !="")
 		{
-             if($name==$password)
-			 {
-				header('location: Home.html');
-			 }
-			 else
-			 {
-				 echo "Invalid username/password";
-			 }
+				if($_SESSION['user']['name'] == $username && $_SESSION['user']['password'] == $password)
+				{
+					$_SESSION['flag'] = "true";
+				          header('location: Home.html');
+				}
+				else
+				{
+                     echo "in";
+				}
+			
 		}
 		else
 		{

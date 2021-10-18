@@ -16,7 +16,7 @@
                        {
                                
                              $myfile = fopen('user.txt', 'a');
-                             $user = $_POST['id']."|".$_POST['password']."|".$_POST["username" ].$_POST["users" ]."\r\n";
+                             $user = $_POST['id']."|".$_POST['password']."|".$_POST["username" ]."|".$_POST["users" ]."\r\n";
 
                             fwrite($myfile, $user);
                             fclose($myfile);
@@ -51,5 +51,11 @@
 		}
 	}
 ?>
+
+
+
+
+
+
 
 

@@ -5,6 +5,7 @@
     {
 		$id = $_POST['id'];
 		$password = $_POST['password'];
+		$usertype= $_POST['users'];
 
 		if($id != "")
 		{
@@ -16,12 +17,12 @@
 				{
 					$data = fgets($myfile);
 					$user = explode('|', $data);
-					if(trim($user[0]) == $id && trim($user[1]) == $password && trim($user[3]) == "Admin" )
+					if(trim($user[0]) == $id && trim($user[1]) == $password && trim($user[3])=="Admin" )
 					{
 						setcookie('flag', 'true', time()+3600, '/');
 						header('location: AdminHome.php');
 					}
-                    else if(trim($user[0]) == $id && trim($user[1]) == $password && trim($user[3]) == "User")
+                    else if(trim($user[0]) == $id && trim($user[1]) == $password && trim($user[3]) =="User")
                     {
                         setcookie('flag', 'true', time()+3600, '/');
 						header('location: UserHome.php');

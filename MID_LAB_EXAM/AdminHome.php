@@ -1,3 +1,12 @@
+<?php 
+	session_start();
+	if(isset($_COOKIE['flag'])){
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +16,11 @@
      <form method="post" action="signupcheck.php">
 		<fieldset>
             <center>
-                <h1>WELCOME ......!</h1><br/>
+                <h1>WELCOME <?php echo $_COOKIE['loggedInName'] ?>!</h1><br/>
                 <a href="profile.php">Profile</a><br/>
-                <a href="Changepss.php">Change Password</a><br/>
-                <a href="viewpro.php">View Users</a><br/>
-                <a href="logout">Logout</a><br/>
+                <a href="changepass.php">Change Password</a><br/>
+                <a href="viewuser.php">View Users</a><br/>
+                <a href="logout.php">Logout</a><br/>
 
 
 
@@ -28,3 +37,10 @@
 	</form>
 </body>
 </html>
+
+<?php 
+     } else {
+        header('location: login.html');
+    }
+
+?>

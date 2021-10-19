@@ -1,3 +1,11 @@
+<?php 
+	session_start();
+	if(isset($_COOKIE['flag'])){
+?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,3 +38,11 @@
 	</form>
 </body>
 </html>
+
+
+<?php 
+     } else {
+        header('location: login.html');
+    }
+
+?>

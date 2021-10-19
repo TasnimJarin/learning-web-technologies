@@ -33,7 +33,7 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2" align="right"><a href="">Go Home</a></td>
+                    <td colspan="2" align="right"><a href="AdminHome.php">Go Home</a></td>
                 </tr>
 
             </table>

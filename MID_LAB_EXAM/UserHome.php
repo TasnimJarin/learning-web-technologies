@@ -15,7 +15,7 @@
 		<fieldset>
             <center>
                 <h1>WELCOME  <?php echo $_COOKIE['loggedInName'] ?>! </h1><br/>
-                <a href="profile.php">Profile</a><br/>
+                <a href="profileU.php">Profile</a><br/>
                 <a href="changepass.php">Change Password</a><br/>
                 <a href="logout.php">Logout</a><br/>
 

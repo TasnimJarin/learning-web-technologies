@@ -18,6 +18,17 @@
                 }
     }
 
+    function getAllProduct()
+    {
+        $con=getConnection();
+
+            $sql ="select * from products ";
+            $result=mysqli_query($con, $sql);
+
+            return $result;
+                
+    }
+
 
 
 ?>

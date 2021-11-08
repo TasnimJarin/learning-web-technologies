@@ -14,8 +14,10 @@
 </head>
 <body>
 
-	<br>
-	<table border="2" align="center">
+<form method="post">
+		<fieldset>
+			<legend>DISPLAY</legend>
+	<table border="2">
 		<tr>
 			<th>NAME</th>
 			<th>PROFIT</th>
@@ -24,13 +26,13 @@
 		</tr>
 		<?php
             
-            $result =getAllProduct();
+              $result =getAllProduct();
 		      while($user= mysqli_fetch_assoc($result))
             {  ?>
                 
              <tr>
 				<td><?=$user['name']?></td>
-				<td><?=$user['buying']?></td>
+				<td><?=($user['selling']-$user['buying'])?></td>
 				<td>
 				<a href="edit.php?edit=<?=$user['id'] ?>"> EDIT</a> |
 				<a href="delete.php?delete=<?=$user['id']?>"> DELETE</a>
@@ -41,5 +43,7 @@
             }
 		?>
 	</table>
+    </fieldset>
+	</form>
 </body>
 </html>

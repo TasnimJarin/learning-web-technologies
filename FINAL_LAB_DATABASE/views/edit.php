@@ -31,8 +31,8 @@
                       }
                       else
                       {
-                          die(mysqli_error($con));
-                          //echo"Try Again........";
+
+                          echo"Try Again........";
                       }
 				}else{
 					echo "Invalid email...";

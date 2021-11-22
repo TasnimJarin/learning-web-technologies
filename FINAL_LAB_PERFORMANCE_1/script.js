@@ -1,13 +1,24 @@
-function f1()
-{
+function btn(key)
+ {
+    let resultElement = document.getElementById("result");
+    let resultPrevElement = document.getElementById("resultPrev");
+    let operatorElement = document.getElementById("operator");
 
-	let name = document.getElementById('name').value;
-	
-	if(name != ""){
-		document.getElementsByTagName('h1')[0].innerHTML = name;
-
-		document.getElementById('d1').innerHTML = "";
-	}else{
-		document.getElementById('d1').innerHTML = "<p style='color:red'> Null data</p>";
-	}
-}
+    console.log(key);
+    if (!isNaN(key)) 
+    {
+      let res = resultElement.innerHTML;
+      resultElement.innerHTML = res == 0 ? key : res + key;
+    } 
+    else if (key == ".")
+     {
+      indexOperator = resultElement.innerHTML.indexOf("+");
+    } 
+    else 
+    {
+        f (key == "+" || key == "-" || key == "*" || key == "/" || key == "=") 
+        {
+            
+        }
+    }
+  }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+	
+
+</head>
+<body>
+    <div class="main">
+        <form class="calculatorForm"name="calculatorForm">
+            <div class="screen">
+                <input type="text" id="s" name="screen" readonly/>
+
+            </div>
+            <div class="btn">
+                <input type="button" name="CE" value ="CE" />
+                <input type="button" name="C" value ="C" />
+                <input type="button" name="de" value ="(X)" onclick="deleteButton()" />
+                <input type="button" id="n" name="div" value ="÷" onclick="ajax()"/>
+
+            </div>
+            <div class="btn">
+                <input type="button" id="n" name="num7" value ="7" onclick="ajax()"/>
+                <input type="button" id="n" name="num2" value ="8" onclick="ajax()"/>
+                <input type="button" id="n" name="num3" value ="9" onclick="ajax()"/>
+                <input type="button" id="n" name="mul" value ="*" onclick="ajax()"/>
+
+            </div>
+            <div class="btn">
+                <input type="button" id="n" name="num4" value ="4"onclick="ajax()"/>
+                <input type="button" id="n" name="num5" value ="5" onclick="ajax()"/>
+                <input type="button" id="n" name="num6" value ="6" onclick="ajax()"/>
+                <input type="button" id="n" name="sub" value ="-" onclick="ajax()"/>
+
+            </div>
+            <div class="btn">
+                <input type="button" id="n" name="num1" value ="1" onclick="ajax()"/>
+                <input type="button" id="n" name="num2" value ="2" onclick="ajax()"/>
+                <input type="button"id="n" name="num3" value ="3" onclick="ajax()"/>
+                <input type="button" id="n" name="plus" value ="+" onclick="ajax()"/>
+
+            </div>
+            <div class="btn">
+                <input type="button" id="n" name="plus/sub" value ="+/-" onclick="ajax()"/>
+                <input type="button" id="n" name="num0" value ="0" onclick="ajax()"/>
+                <input type="button" id="n" name="dot" value ="." onclick="ajax()"/>
+                <input type="button" id="n" name="equal " value ="=" onclick="Calculate()"/>
+
+            </div>
+
+
+         
+       </form>
+   </div>
+
+
+     
+	
+</body>
+</html>
+

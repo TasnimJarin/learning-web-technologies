@@ -15,23 +15,3 @@ function ajax(num1, num2, operator, key){
 		}
 	}
 }
-function getResult(num1, num2, operator, key) {
-    let xhttp = new XMLHttpRequest();
-  
-    xhttp.open("POST", "jsGotNoOperators.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("num1=" + num1 + "&&num2=" + num2 + "&&operator=" + operator);
-  
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        //document.getElementById('h1').innerHTML = this.responseText;
-        //console.log(this.responseText);
-        //return this.responseText;
-        resultPrevElement.innerHTML = this.responseText;
-        resultElement.innerHTML = 0;
-        operatorElement.innerHTML = key;
-        hideElementsForEqual(key);
-      }
-    }
-
-}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>REGSTRATION PAGE</title>
+	<link rel="stylesheet" type="text/css" href="../../controller/Admin/style.css">
+</head>
+<body>
+
+	<form name="myform" method="post" enctype="multipart/form-data" >
+		<div id="d1">
+            
+			
+       </div>
+             <div id="d3" >
+	             <div class="c2">
+					<div id="t1">
+      
+
+					</div>
+		
+
+                       <center> <legend><h2>REGSTRATION</h2></legend></center>
+                               <b>Username:</b><br/>
+							   <input type="text" name="username" value="" placeholder="Enter Username"> *Atleast two words<br/>
+							   <b>Id:</b><br/>
+							   <input type="text" name="id" value="" placeholder="Enter UserId">*Can contain 0-9, dash only<br/>
+							   <b>Email:</b><br/>
+							   <input type="email" name="email" value="" placeholder="Enter Valid Email">*(anything@example.com)<br/>
+							   <b>Date of Birth:</b><br/>
+							   <input type="date" name="date" value="date" ><br/>
+							   <b>Gender:</b><br/>
+                                <input type="radio" name="gender" value="Male"><b>Male</b>
+                                <input type="radio" name="gender" value="Female"><b>Female</b>
+                                <input type="radio" name="gender" value="Other"><b>Other</b><br/>
+								
+                              <b>Address:</b></td><br/>
+                              <input type="text" name="add" value="" placeholder="Enter Address"><br/>
+							  <b>Password:</b><br/>
+							  <input type="password" name="password" value="" placeholder="Enter Password"><br/>
+							  <b>Picture:</b><br/>
+							  <input type="file" name="file" value=""><br/><br/>
+							  <b>User Type:</b><br/>
+                                <input type="radio" name="usertype" value="Admin"><b>Admin</b>
+                                <input type="radio" name="usertype" value="Teacher"><b>Teacher</b>
+								<input type="radio" name="usertype" value="Student"><b>Student</b>
+                                <input type="radio" name="usertype" value="Parent"><b>Parent</b><br/>
+							  <input type="submit" name="submit" value="Submit" onclick="validation()"><br/><br/>
+							  Back to <a href="login.html">Login</a>
+
+				 </div>
+			 </div>
+
+			 <div id="t1">
+      
+
+			</div>
+                           
+	</form>
+
+	<script type="text/javascript">
+        
+        function validation(){
+        
+        var name        = document.forms["myform"] ["username"].value;
+        var userid      = document.forms["myform"] ["id"].value;
+        var email       = document.forms["myform"] ["email"].value;
+        var date        = document.forms["myform"] ["date"].value;
+        var gender      = document.forms["myform"] ["gender"].value;
+        var address     = document.forms["myform"] ["add"].value;
+        var password    = document.forms["myform"] ["password"].value;
+        var file        = document.forms["myform"] ["file"].value;
+        var usertype    = document.forms["myform"] ["usertype"].value;
+        if(name == "" || userid == "" || email == "" || date == "" || gender == ""|| address == ""|| password == ""|| file == "" || usertype == "" ) 
+
+        {
+            //Name Validation
+            if(name == '')
+			{
+				alert('Name: Null value');
+			}
+            else if(name.length<2 && (name>='A' && name<='Z' || name>='a' && name<='z'))
+				{
+                    alert('Name: Contains at least two words');
+                }
+            else if(name >='0'  && name<='9' || name=='~' || name=='!' || name=='@' || name =='#' || name=='$' || name=='%' || name=='^' || name=='&' || name=='*' || name=='()'|| name=='/' )
+			{
+                    alert('Name: Can contain a-zor A-Zor dot(.) or dash(-)');
+            }
+            else if(name>='0' && name<='9')
+			{
+                    alert('Name: Must be starts with letter');
+            }
+            
+            //ID validation        
+            if(userid == ''){
+                alert('ID : Enter Any ID Please');
+            }
+           
+            // Email Validation 
+            if(email  == ""){
+				alert('Email: Null value');
+			}
+			else if(email!='@')
+			{
+				alert('Email: Incomplete email!! Exmple=>(anything@example.com)');
+			}
+            //Date validation
+             if(date == ''){
+                alert('Date Of Birth : Enter Birth Date Please');
+            } 
+            //Gender Validation 
+             if(gender == ''){
+                alert('Gender : Select Any One ');
+            } 
+            //Address Validation
+             if(address == '')
+			 {
+                alert('Adress : Can not be empty ');
+            } 
+             //Password Validation
+             if(password == '')
+			 {
+                alert('password : Can not be empty ');
+            } 
+            
+
+              //File Validation
+             if(file == '')
+			 {
+                alert('File : Select Any One ');
+            } 
+            //UserType Validation  
+             if(usertype == '')
+			 {
+                alert('usertype : Select Any One ');
+            }     
+
+
+
+           
+        }
+        else
+        {
+            var xhttp= new XMLHttpRequest();
+            var json ={
+                'name' : name,
+                'userid': userid,
+                'email':email,
+                'date':date,
+                'gender':gender,
+                'add':address,
+                'password':password,
+                'file':file,
+                'usertype':usertype
+
+
+
+             }
+
+             var myjson=JSON.stringify(json);
+             var xhttp= new XMLHttpRequest();
+
+            xhttp.open('POST', '../../controller/Admin/regCheck.php', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send('data='+myjson);
+            // xhttp.send('email='+email);
+            // xhttp.send('password='+password);
+            // xhttp.send('usertype='+usertype);
+
+
+
+
+         xhttp.onreadystatechange = function(){
+
+        if(this.readyState == 4 && this.status == 200){
+            document.getElementById('t1').innerHTML = "DONE";
+        }
+    }
+        }
+        
+        }
+    </script>
+</body>
+</html>
+
+

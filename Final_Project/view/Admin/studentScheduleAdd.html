@@ -1,0 +1,99 @@
+<html>
+    <head>
+    <title>ADD student Schedule</title>
+    <link rel="stylesheet" type="text/css" href="../../controller/Admin/TSP.css">
+    </head>
+    <body>
+    <div id="d1">
+                  <img src="../../assets/Admin/newwb_back.jpg" class="c1"  >
+
+                   <form method="POST" onSubmit="ajax(event)"  >
+                   <fieldset>
+                   <div id ="ds8">
+                   <center><h2>ADD student Schedule<h2></center>
+                   <center>  
+                       Student Id:
+                       <input type="text" name="sid" id="sid" Value=""><br/><br/>
+                       CLASS TIME and SUBJECT (Saturday):
+                       <input type="text" name="Saturday" id="Saturday" Value=""><br/><br/>
+                       CLASS TIME and SUBJECT (Sunday):
+                       <input type="text" name="Sunday" id="Sunday" Value=""><br/><br/>
+                       CLASS TIME and SUBJECT (Monday):
+                       <input type="text" name="Monday" id="Monday" Value=""><br/><br/>
+                       CLASS TIME and SUBJECT (Tuesday):
+                       <input type="text" name="Tuesday" id="Tuesday" Value=""><br/><br/>
+                       CLASS TIME and SUBJECT (Wednesday):
+                       <input type="text" name="Wednesday" id="Wednesday" Value=""><br/><br/>
+                       CLASS TIME and SUBJECT (Thursday):
+                       <input type="text" name="Thursday" id="Thursday" Value=""><br/><br/>
+                       
+  
+                       <input type="submit" name="submit" Value="Add_Student schedule"></center>
+                       <center><h4><a href="studentSchedule.php">BACK</a><h4></center>
+                       
+                       
+  
+                      
+                      </fieldset>
+
+                    </form>
+</div>
+</div>
+
+<script type="text/javascript">
+        
+    function ajax(e){
+console.log(e);
+e.preventDefault();
+console.log("Form Submitted");
+
+        let sid = document.getElementById('sid').value;
+        let Saturday  = document.getElementById('Saturday').value;
+        let Sunday = document.getElementById('Sunday').value;
+        let Monday   = document.getElementById('Monday').value;
+        let Tuesday = document.getElementById('Tuesday').value;
+        let Wednesday  = document.getElementById('Wednesday').value;
+        let Thursday = document.getElementById('Thursday').value;
+        
+    
+    
+    
+   
+        var xhttp= new XMLHttpRequest();
+        var json ={
+            'sid' : sid,
+            'Saturday': Saturday,
+            'Sunday':Sunday,
+            'Monday':Monday,
+            'Tuesday':Tuesday,
+            'Wednesday':Wednesday,
+            'Thursday':Thursday,
+            
+
+         }
+
+         var myjson=JSON.stringify(json);
+         console.log(myjson);
+         var xhttp= new XMLHttpRequest();
+
+        xhttp.open('POST', '../../controller/Admin/studentScheduleCheck.php', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(`data= ${myjson}`);
+        
+
+
+
+
+     xhttp.onreadystatechange = function(){
+
+    if(this.readyState == 4 && this.status == 200){
+        // document.getElementById('t1').innerHTML = "DONE";
+        alert(this.responseText);
+    }
+ }
+    
+    
+    }
+</script>
+    </body>
+</html>

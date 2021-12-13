@@ -1,0 +1,29 @@
+.c1{
+	position: fixed;
+    
+	width: 1800px;
+	height: 800px;
+
+}
+
+#d1{
+	position: fixed;
+    top: 40px;
+    left:580px ;
+	
+
+}
+#d2{
+	position: fixed;
+    top: 140px;
+    left:600px ;
+    
+
+}
+#d4{
+	position: fixed;
+    top: 40px;
+    left:290px ;
+    
+
+}
